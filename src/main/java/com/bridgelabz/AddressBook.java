@@ -6,9 +6,9 @@ public class AddressBook {
     Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
        AddressBook addressBook=new AddressBook();
-       addressBook.createContact();
+       addressBook.addContactDetail();
     }
-    public void createContact(){
+    public void addContactDetail(){
         Contact person1 =new Contact();
 
         System.out.println("Enter First Name :");
