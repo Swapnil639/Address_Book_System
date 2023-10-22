@@ -9,6 +9,7 @@ public class AddressBook {
        AddressBook addressBook=new AddressBook();
        addressBook.addContactDetail();
        addressBook.editContactDetail();
+       addressBook.deleteContactDetail();
     }
     public void addContactDetail(){
         System.out.println("Enter First Name :");
@@ -90,6 +91,56 @@ public class AddressBook {
 
             }
             System.out.println(person1);
+            System.out.println("If you want to continue press y or Y");
+            s=scanner.next();
+        }while (s.equals("y") || s.equals("Y"));
+    }
+    public void deleteContactDetail() {
+        System.out.println("delete the Contact");
+        String s;
+        do {
+            System.out.println("Choose an option \n1.First name \n2.Last name \n3.Address \n4.City \n5.state \n6.Email Id \n7.Zip \n8.Phone Number");
+            int option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    System.out.println("Enter First name :");
+                    person1.setFirstName(null);
+                    break;
+                case 2:
+                    System.out.println("Enter Last name :");
+                    person1.setLastName(null);
+                    break;
+                case 3:
+                    System.out.println("Enter Address :");
+                    person1.setAddress(null);
+                    break;
+                case 4:
+                    System.out.println("Enter City :");
+                    person1.setCity(null);
+                    break;
+
+                case 5:
+                    System.out.println("Enter State :");
+                    person1.setState(null);
+                    break;
+                case 6:
+                    System.out.println("Enter Email ID :");
+                    person1.setEmailId(null);
+                    break;
+                case 7:
+                    System.out.println("Enter Zip :");
+                    person1.setZip(0);
+                    break;
+                case 8:
+                    System.out.println("Enter Phone Number :");
+                    person1.setPhoneNumber(0);
+                    break;
+                default:
+                    System.out.println("Invalid option");
+            }
+            System.out.println("Successful delete the contact and Save it");
+            System.out.println(person1);
+            System.out.println();
             System.out.println("If you want to continue press y or Y");
             s=scanner.next();
         }while (s.equals("y") || s.equals("Y"));
