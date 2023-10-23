@@ -207,6 +207,29 @@ public class AddressBook {
             contactArrayList.stream().sorted(Comparator.comparing(Contact::getFirstName)).forEach(System.out::println);
         }
     }
+    public void sortByCity() {
+        if (contactArrayList.isEmpty()) {
+            System.out.println("Contact book is empty");
+        } else {
+            contactArrayList.stream().sorted(Comparator.comparing(Contact::getCity)).forEach(System.out::println);
+        }
+    }
+
+    public void sortByState() {
+        if (contactArrayList.isEmpty()) {
+            System.out.println("Contact book is empty");
+        } else {
+            contactArrayList.stream().sorted(Comparator.comparing(Contact::getState)).forEach(System.out::println);
+        }
+    }
+
+    public void sortByZipCode() {
+        if (contactArrayList.isEmpty()) {
+            System.out.println("Contact book is empty");
+        } else {
+            contactArrayList.stream().sorted(Comparator.comparing(Contact::getZip)).forEach(System.out::println);
+        }
+    }
 
 
 
