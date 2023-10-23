@@ -189,4 +189,14 @@ public class AddressBook {
                 .filter(contact -> contact.getCity().equals(cityOrState) || contact.getState().equals(cityOrState))
                 .forEach(System.out::println);
     }
+    public void countCityOrPerson() {
+        System.out.println("Enter the name of City or State");
+        String cityOrState = scanner.next();
+
+        long count = contactArrayList.stream()
+                .filter(contact -> contact.getCity().equals(cityOrState) || contact.getState().equals(cityOrState))
+                .count();
+
+        System.out.println("Count: " + count);
+    }
 }
