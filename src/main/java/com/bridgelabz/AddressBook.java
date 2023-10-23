@@ -181,6 +181,7 @@ public class AddressBook {
         System.out.println(contactArrayList);
         System.out.println("successfully Delete the contact");
     }
+
     public void searchContact() {
         System.out.println("Enter the name of city or state");
         String cityOrState = scanner.next();
