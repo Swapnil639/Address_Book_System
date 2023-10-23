@@ -65,7 +65,7 @@ public class AddressBook {
     }
 
     public void addContactDetail() {
-        System.out.println(" Enter the First Name ");
+        System.out.println("Enter the First Name ");
         String firstName = scanner.next();
         boolean isDuplicates = contactArrayList.stream().anyMatch(contact -> contact.getFirstName().equals(firstName));
         if (isDuplicates) {
@@ -180,5 +180,12 @@ public class AddressBook {
         }
         System.out.println(contactArrayList);
         System.out.println("successfully Delete the contact");
+    }
+    public void searchContact() {
+        System.out.println("Enter the name of city or state");
+        String cityOrState = scanner.next();
+        contactArrayList.stream()
+                .filter(contact -> contact.getCity().equals(cityOrState) || contact.getState().equals(cityOrState))
+                .forEach(System.out::println);
     }
 }
