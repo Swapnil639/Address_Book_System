@@ -65,9 +65,14 @@ public class AddressBook {
     }
 
     public void addContactDetail() {
-        Contact contact = new Contact();
-        System.out.println("Enter the First Name");
+        System.out.println(" Enter the First Name ");
         String firstName = scanner.next();
+        boolean isDuplicates = contactArrayList.stream().anyMatch(contact -> contact.getFirstName().equals(firstName));
+        if (isDuplicates) {
+            System.out.println("all ready save the contact ");
+            return;
+        }
+        Contact contact = new Contact();
         contact.setFirstName(firstName);
         System.out.println("Enter the Last Name");
         String lastName = scanner.next();
