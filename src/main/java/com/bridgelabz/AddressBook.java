@@ -1,12 +1,13 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class AddressBook {
     public static Scanner scanner = new Scanner(System.in);
     private String addressBookName;
-    public ArrayList<Contact> contactArrayList = new ArrayList<>();
+    public static ArrayList<Contact> contactArrayList = new ArrayList<>();
 
     public String getAddressBookName() {
         return addressBookName;
@@ -192,11 +193,21 @@ public class AddressBook {
     public void countCityOrPerson() {
         System.out.println("Enter the name of City or State");
         String cityOrState = scanner.next();
-
         long count = contactArrayList.stream()
                 .filter(contact -> contact.getCity().equals(cityOrState) || contact.getState().equals(cityOrState))
                 .count();
 
         System.out.println("Count: " + count);
     }
+
+    public void sortByPersonName() {
+        if (contactArrayList.isEmpty()) {
+            System.out.println("Contact book is empty");
+        } else {
+            contactArrayList.stream().sorted(Comparator.comparing(Contact::getFirstName)).forEach(System.out::println);
+        }
+    }
+
+
+
 }
